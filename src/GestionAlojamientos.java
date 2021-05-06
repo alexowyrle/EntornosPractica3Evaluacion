@@ -1,7 +1,17 @@
 import java.util.ArrayList;
 
+
+/**
+ * Clage gestora de los alojamientos. Contiene el main
+ * @author Axel
+ * @version v1.0
+ */
 public class GestionAlojamientos {
 
+	/**
+	 * Metodo principal
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		ArrayList<Alojamiento> alojamientos = new ArrayList<>();
 		Alojamiento alojamiento;
@@ -20,6 +30,10 @@ public class GestionAlojamientos {
 		mostrarPreciosDeTodos(alojamientos);
 	}//main
 
+	/**
+	 * Crea una serie de alojamientos y los añade a una colección
+	 * @param alojamientos - Colección con los alojamientos existentes
+	 */
 	public static void crearAlojamientos(ArrayList<Alojamiento> alojamientos) {
 		alojamientos.add(new Caravana("car01", 4, 2, 750));		
 		alojamientos.add(new Bungalow("bung01", 4, 3, 12));
@@ -35,6 +49,10 @@ public class GestionAlojamientos {
 		alojamientos.add(new Caravana("car04", 3, 2, 750));
 	}//crearAlojamientos
 
+	/**
+	 * Recorre los alojamientos y muestra la información sobre ellos
+	 * @param alojamientos - Colección con los alojamientos existentes
+	 */
 	public static void mostrarAlojamientos(ArrayList<Alojamiento> alojamientos) {
 		System.out.println("Listado de los datos de los alojamientos");
 		for(int i = 0; i < alojamientos.size(); i++) {
@@ -43,6 +61,12 @@ public class GestionAlojamientos {
 
 	}//mostrarAlojamientos
 
+	/**
+	 * Añade un alojamiento a la colección de alojamientos si este no está añadido previamente
+	 * (mismo código de identificación)
+	 * @param alojamientos - Colección con los alojamientos existentes
+	 * @param alojamiento - Alojamiento a añadir
+	 */
 	public static void AltaAlojamiento(ArrayList<Alojamiento> alojamientos, Alojamiento alojamiento) {
 		int posicion = buscar(alojamientos,alojamiento);
 
@@ -55,6 +79,12 @@ public class GestionAlojamientos {
 
 	}//AltaAlojamiento
 
+	/**
+	 * Busca en la colección de alojamientos si ya existe o no uno con ese código
+	 * @param alojamientos - Colección con los alojamientos existentes
+	 * @param alojamiento - Alojamiento a comprobar
+	 * @return -1 si no existe. La posición si ya está añadido
+	 */
 	public static int buscar(ArrayList<Alojamiento> alojamientos,Alojamiento alojamiento) {
 		for(int i = 0; i < alojamientos.size(); i++) {
 			if(alojamientos.get(i).getCodigo().equals(alojamiento.getCodigo())) {
@@ -63,7 +93,11 @@ public class GestionAlojamientos {
 		}
 		return -1;
 	}//buscar
-
+	
+	/**
+	 * Imprime el precio para un alojamiento en concreto y un número de días
+	 * @param alojamientos - Colección con los alojamientos existentes
+	 */
 	public static void calculaPrecioAlquiler(ArrayList<Alojamiento> alojamientos) {
 		// Los datos de entrada serán el código del alojamiento y
 		// el número de días que ha durado el alquiler
@@ -85,6 +119,10 @@ public class GestionAlojamientos {
 	}//calculaPrecioAlquiler
 
 
+	/**
+	 * Muestra el precio a pagar por cada alojamiento existente en un número de días
+	 * @param alojamientos - Colección con los alojamientos existentes
+	 */
 	public static void mostrarPreciosDeTodos(ArrayList<Alojamiento> alojamientos) {
 //		 Se da como dato de entrada un número de días de alquiler y 
 //		 se obtiene un listado con los datos de cada alojamiento y lo que costaría su alquiler 

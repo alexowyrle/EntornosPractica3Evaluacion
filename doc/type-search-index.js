@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Alojamiento"},{"p":"<Unnamed>","l":"Apartamento"},{"p":"<Unnamed>","l":"Bungalow"},{"p":"<Unnamed>","l":"Caravana"},{"p":"<Unnamed>","l":"GestionAlojamientos"},{"p":"<Unnamed>","l":"Leer"}];updateSearchResults();
